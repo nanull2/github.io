@@ -5,11 +5,12 @@
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-        $.get("Grade_Number.csv",function(csvString) {
-          var arrayData= $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
-          var data=new.google.visualization.arrayToDataTable(arrayData);
-    
-
+        var data = google.visualization.arrayToDataTable([
+          ['Grade', 'Number of Student'],
+          ['Freshmen', 10], ['Sophomore', 4], ['Junior', 6],
+          ['Senior', 3], ['Over 5th Year', 4]
+        ]);
+        
         var options = {
           title: 'Student Grade in RC Team',
           legend: 'none',
