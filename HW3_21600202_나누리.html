@@ -7,17 +7,18 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Grade', 'numbers'],
-          ['Freshmen', 10], ['Sophomore', 7], ['Junior', 6],
-          ['Senior', 5], ['Over 5th year', 8]
+          ['Freshmen', 10], ['Sophomore', 5], ['Junior', 7],
+          ['Senior', 3], ['Over 5th year', 2]
         ]);
 
         var options = {
           title: 'Indian Language Use',
           legend: 'none',
           pieSliceText: 'label',
-          slices: { 2: {offset: 0.3},
-                    5: {offset: 0.4},
+          slices: {  4: {offset: 0.2},
+                    12: {offset: 0.3},
                     14: {offset: 0.4},
+                    15: {offset: 0.5},
           },
         };
 
