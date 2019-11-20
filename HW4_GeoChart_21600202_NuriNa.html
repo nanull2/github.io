@@ -26,11 +26,11 @@
       // geo chart
       google.charts.setOnLoadCallback(drawChart);
       function drawChart(arrayData)
-        var data = google.visualization.arrayToDataTable(arrayData);
+        var data = new google.visualization.arrayToDataTable(arrayData);
         var options = {
-          title: '~',
+          title: 'Number of deaths during walking per 100,000 elderly population among OECD country',
           colorAxix: {colors: ['yellow', 'red']},
-          tooltip: {isHtml: true]
+          tooltip: {isHtml: true}
         };
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
         chart.draw(data, options);
