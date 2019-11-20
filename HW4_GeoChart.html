@@ -7,8 +7,6 @@
     <script type="text/javascript">
       google.charts.load('current', {
         'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(readFile);
@@ -24,16 +22,16 @@
       };
       
       // geo chart
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart(arrayData)
+      google.charts.setOnLoadCallback(drawChart); 
+      function drawChart(arrayData) {
         var data = new google.visualization.arrayToDataTable(arrayData);
         var options = {
           title: 'Number of deaths during walking per 100,000 elderly population among OECD country',
-          colorAxix: {colors: ['yellow', 'red']},
-          tooltip: {isHtml: true}
+          colorAxis: {colors: ['yellow', 'red']},
+          tooltip: { isHtml: true }
         };
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-        chart.draw(data, options);
+        chart2.draw(data, options);
       }
     </script>
   </head>
@@ -43,12 +41,12 @@
       <p> date: 2019-11-21</p>
       <p> name: Nuri Na (21600202) </p>
       <p> Introduction: This data shows the death toll of pedestrian (per 100,000 elderly population) by car accident of OECD Countries. </p>
-      <p> Data: The data is from The Road Traffic Authority </p>
+      <p> Data: The data is from The Road Traffic Authority. </p>
       <p> nanull2.github.io/HW4_GeoChart.html</p>
     </div>
-        <script src="https://www.gstatic.com/charts/loader.js"></script>
-	      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+  	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <div id="regions_div" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
