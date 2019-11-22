@@ -12,7 +12,7 @@
       google.charts.setOnLoadCallback(readFile);
       
       function readFile() {
-        filename = "data2.csv";
+        filename = "data_accident.csv";
         $.get(filename, function(csvString) {
           // read a .csv file and save the data in arrayData variable
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
@@ -45,10 +45,6 @@
       <p> Introduction: This data shows the death toll of pedestrian (per 100,000 elderly population) by car accident of OECD Countries. </p>
       <p> Data: The data is from The Road Traffic Authority. </p>
       <p> nanull2.github.io/HW4_GeoChart.html</p>
-    </div>
-  	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+      <div id="regions_div" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
