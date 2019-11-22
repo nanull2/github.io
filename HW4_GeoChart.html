@@ -7,12 +7,12 @@
     <script type="text/javascript">
       google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        'mapsApiKey': 'AIzaSyBpCxToXoWUAMmUM8js5gXezD_8z_6SX1I'
       });
       google.charts.setOnLoadCallback(readFile);
       
       function readFile() {
-        filename = "data_accident.csv";
+        filename = "data2.csv";
         $.get(filename, function(csvString) {
           // read a .csv file and save the data in arrayData variable
           var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
@@ -22,16 +22,18 @@
       };
       
       // geo chart
-      google.charts.setOnLoadCallback(drawChart); 
-      function drawChart(arrayData) {
-        var data = new google.visualization.arrayToDataTable(arrayData);
+
+      function drawRegionsMap(arrayData) {
+        var data = google.visualization.arrayToDataTable(arrayData);
+	      
         var options = {
+	  region: '142',
           title: 'Number of deaths during walking per 100,000 elderly population among OECD country',
           colorAxis: {colors: ['yellow', 'red']},
-          tooltip: { isHtml: true }
+          sizeAxis: {minvalue:0, maxvalue:20}
         };
         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-        chart2.draw(data, options);
+        chart.draw(data, options);
       }
     </script>
   </head>
