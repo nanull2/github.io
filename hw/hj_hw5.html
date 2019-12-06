@@ -8,8 +8,6 @@
     <script type="text/javascript">
       google.charts.load('current', {
         'packages':['map'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyBjsoPdQEI5_QzsjKuz42jpCkeV4gJLjyE'
       });
       google.charts.setOnLoadCallback(readFile);
@@ -23,8 +21,10 @@
           drawChart(arrayData)
         });
       };
+      
       function drawChart(arrayData) {
         var data = google.visualization.arrayToDataTable(arrayData);
+        
         var options = {
           zoomLevel: 10,
           showTooltip: true,
@@ -33,9 +33,11 @@
           mapType: 'terrain',
           mapTypeIds: ['normal', 'terrain', 'satellite', 'hybrid'],
         };
+        
         var chart = new google.visualization.Map(document.getElementById('chart_div'));
-        chart.draw(data, options);
+        chart.draw(data,options);
       }
+      
     </script>
   </head>
   <body>
@@ -49,6 +51,6 @@
      <script src="https://www.gstatic.com/charts/loader.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-    <div id="regions_div" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
+    <div id="chart_div" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
   </body>
 </html>
